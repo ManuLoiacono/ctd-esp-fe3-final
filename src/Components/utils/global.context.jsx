@@ -16,7 +16,8 @@ export const ContextProvider = ({ children }) => {
   const valor = true;
 
   const [state, dispatch] = useReducer(reducer, initialState);
-  // console.log(state);
+  // const {list, favs, theme} =
+
   const url = 'https://jsonplaceholder.typicode.com/users';
 
   useEffect(() => {

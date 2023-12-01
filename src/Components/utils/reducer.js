@@ -5,9 +5,13 @@ export const reducer = (state, action) =>{
             return {
                 ...state, list: action.payload
             }
-        case 'GET_FAVS':
+        case 'ADD_FAVS':
             return {
-                ...state, favs: []
+                ...state, favs: [...state.favs, action.payload] // incompleto
+            }
+        case 'CHANGE_THEME':
+            return {
+               ...state, theme: '' // incompleto
             }
         default:
             return state
