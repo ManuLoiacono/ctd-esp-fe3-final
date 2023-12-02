@@ -17,21 +17,23 @@ const Detail = () => {
     const fetchChar = async () => {
       const res = await axios(url)
       setChar(res.data)
+      console.log(res.data)
+
     }
     fetchChar() 
   }, [])
-
+  
   return (
     <div>
-      <h1>Detail Dentist {id} </h1>
+      <h1 id="h1">Detail Dentist {id} </h1>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
 
       
-        <h3>{char.name}</h3>
-        <p>{char.email}</p>
-        <p>{char.phone}</p>
-        <p>{char.website}</p>
+        <h3 id="h1">{char.name}</h3>
+        <p id="h1">{char.email}</p>
+        <p id="h1">{char.phone}</p>
+        <p id="h1 ">{char.website}</p>
       
     </div>
     

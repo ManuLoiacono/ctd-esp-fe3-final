@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import { useCharContext } from "./utils/global.context";
+import dentistFoto from "../images/doctor.jpg"
 
 // const Card = ({ name, username, id }) => {
 const Card = ({ character }) => {
@@ -21,17 +22,19 @@ const Card = ({ character }) => {
       dispatch({type: 'ADD_FAVS', payload: character})
     }
 
-    // dispatch({type: 'ADD_FAVS', payload: character})
   }
 
   return (
-    <div className="card">
+    <div class="card">
         
       {/* En cada card deberan mostrar en name - username y el id */}
       {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
       {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-      
       <Link to={"/dentist/" + character.id}>
+        <div class="foto-dentista">
+          <img src={dentistFoto} alt="Dentista" />
+        </div>
+        
         <h3>{character.name}</h3>
       </Link> 
       <h4>{character.username}</h4>

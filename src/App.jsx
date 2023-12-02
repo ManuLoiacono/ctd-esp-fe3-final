@@ -13,10 +13,11 @@ import Favs from './Routes/Favs'
 
 function App() {
   return (
-      <div className="App">
+      <div id="App">
           <>
           <Navbar/>
             <Routes>
+              <Route path="/" element={<Home/>}/>
               <Route path="/home" element={<Home/>}/>
               {/* <Route path="/dentist/:id" element={<Detail/>}/> */}
               <Route path="/contact" element={<Contact/>}/>

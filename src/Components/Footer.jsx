@@ -1,12 +1,13 @@
-import React from 'react'
+  import React from 'react'
+  import dhLogo from '../images/DH.png'
 
-const Footer = () => {
-  return (
-    <footer class="footer">
-        <p>Powered by</p>
-        <img src="" alt='DH-logo'/>
-    </footer>
-  )
-}
+  const Footer = () => {
+    return (
+      <footer id="footer">
+          <p>Powered by</p>
+          <img src={dhLogo} alt='DH-logo'/>
+      </footer>
+    )
+  }
 
-export default Footer
+  export default Footer

@@ -5,7 +5,7 @@ import axios from 'axios';
 export const initialState = {
   list: [],
   favs: JSON.parse(localStorage.getItem('favs')) || [],
-  theme: true
+  theme: 'light'
 }
 export const ContextGlobal = createContext(undefined);
 

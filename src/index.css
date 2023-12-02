@@ -19,11 +19,12 @@ code {
   cursor: pointer;
 }
 
-h1{
+#h1{
   text-align: center;
+  color: black;
 }
 
-nav{
+#nav{
   display: flex;
   width: 100%;
   padding: 1rem;
@@ -33,32 +34,39 @@ nav{
 }
 
 a{
-  color: #000;
   text-decoration: none;
+  color: #000;
   margin: 5px;
-  cursor: pointer;
+  
 }
+
 a:hover{
   color: rgb(136, 136, 136);
 } 
 
-footer {
+
+
+
+
+#footer {
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
+  width: 100%;
   height: 40px;
   margin-top: 2rem;
+  background-color: #2c3e50;
+  color: #ffffff;
 }
 
-footer > img{
+#footer > img{
   width: 200px;
   margin: 0;
 }
-footer > p{
+#footer > p{
   margin: 0;
   padding-top: 0.7rem;
 }
@@ -94,7 +102,7 @@ form{
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
-}
+} 
 
 table {
  border-collapse: collapse;
@@ -123,15 +131,10 @@ tr:nth-child(even) {
   color: white;
 }
 
-.App {
+#App {
   background-color: white;
 
 }
-
-/* ul {
-  width: 100%;
-  justify-content: space-evenly;
-} */
 
 li {
   display: inline-block;
@@ -143,7 +146,7 @@ li {
   justify-content: space-between;
 }
 
-.buttonTheme {
+#buttonTheme {
   margin-left: 40px;
   background-color: #34495e;
   color: #ffffff;
@@ -154,16 +157,8 @@ li {
   cursor: pointer;
 }
 
-.buttonTheme:hover {
-  background-color: #2c3e50;
-}
 
 
-
-
-
-
-/* Estilos de la Card */
 .card {
   background-color: #ffffff;
   border: 1px solid #ecf0f1; 
@@ -172,18 +167,24 @@ li {
   padding: 20px;
 }
 
-/* Estilos del Título */
+.foto-dentista img{
+  display: flex;
+  text-align: center;
+  width: 100%;
+
+}
+
 .card h3 {
+  text-align: center;
+  justify-content: center;
   color: #3498db;
 }
 
-/* Estilos del Texto Secundario */
 .card p {
   font-size: 25px;
   color: #2c3e50;
 }
 
-/* Estilos del Botón en la Card */
 .card button {
   background-color: #34495e; 
   color: #ffffff;
@@ -194,25 +195,9 @@ li {
   cursor: pointer;
 }
 
-/* Estilos adicionales para el Botón al pasar el ratón sobre él */
 .card button:hover {
   background-color: #2c3e50; 
 }
 
 
-.footer {
-  width: 100%;
-  background-color: #2c3e50;
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
-}
 
-.footer p {
-  color: #3498db;
-  text-decoration: none;
-}
-
-.footer p:hover {
-  text-decoration: underline;
-}

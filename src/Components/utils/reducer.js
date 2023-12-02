@@ -7,11 +7,11 @@ export const reducer = (state, action) =>{
             }
         case 'ADD_FAVS':
             return {
-                ...state, favs: [...state.favs, action.payload] // incompleto
+                ...state, favs: [...state.favs, action.payload]
             }
         case 'CHANGE_THEME':
             return {
-               ...state, theme: '' // incompleto
+               ...state, theme: action.payload // incompleto
             }
         default:
             return state

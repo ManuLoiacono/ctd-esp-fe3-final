@@ -1,52 +1,76 @@
 import React from 'react'
-
 import { Link } from "react-router-dom"
-
 import { useCharContext } from './utils/global.context';
-
-//import {BrowserRouter, Routes, Route} from "react-router-dom"
-//import Home from './Home'
-//import Detail from './Detail'
-//import Contact from './Contact'
-//import Favs from './Favs'
+import { useState, useEffect } from 'react'
+import "../index.css";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
 
-  const {state} = useCharContext()
+  const {state, dispatch} = useCharContext()
+  // console.log("theme: ", state.theme)
+
+  const [theme, setTheme] = useState("light")
+
+  const themeMode = () => {
+
+    const Theme2 = (theme === 'dark' ? 'light' : 'dark')
+    setTheme(Theme2)
+    dispatch({type: 'CHANGE_THEME', payload: Theme2})
+
+  }
+
+  useEffect(() => {
+    const back = document.getElementById('App');
+    const title = document.getElementById('h1');
+    const nav = document.getElementById('nav');
+    const themeButton = document.getElementById('buttonTheme');
+    const footer = document.getElementById('footer');
+    
+    back.style.backgroundColor = theme === 'dark' ? '#2c3e50' : 'white';
+    title.style.color = theme === 'dark' ? 'white' : 'black';
+    nav.style.backgroundColor = theme === 'dark'? '#34495e' : '#3498db'
+    themeButton.style.backgroundColor = theme === 'dark'? '#3498db' : '#34495e'
+    footer.style.backgroundColor = theme === 'dark'? '#34495e' : '#3498db'
+  }, [theme]);
+    
+    // const back = document.getElementById('App');
+    // const title = document.getElementById('h1');
+    // const nav = document.getElementById('nav');
+    // const themeButton = document.getElementById('buttonTheme');
+    // const footer = document.getElementById('footer');
+    
+    // back.style.backgroundColor = theme === 'dark' ? '#2c3e50' : 'white';
+    // title.style.color = theme === 'dark' ? 'white' : 'black';
+    // nav.style.backgroundColor = theme === 'dark'? '#34495e' : '#3498db'
+    // themeButton.style.backgroundColor = theme === 'dark'? '#3498db' : '#34495e'
+    // footer.style.backgroundColor = theme === 'dark'? '#34495e' : '#3498db'
+
+
   
   return (
-    <div class="nav">
+    <div id="nav">
       <nav>
         <div class="ul-Button">
           <ul>
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/home" >Home</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact" >Contact</Link>
             </li>
             <li>
-              <Link to="/favs">Favs</Link>
+              <Link to="/favs" >Favs</Link>
             </li>
           </ul>
-          <button class="buttonTheme">{state.them ? '🌙' : '☀️'}</button>
+          <button id="buttonTheme" onClick={(themeMode)}>{(state.theme === 'dark') ? '☀️' : '🌙'}</button>
         </div>
         
       </nav>
       
     </div>
     
-    // <nav>
-    //   {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-    //   <Link to="/home"><h4 class="h4-link">Home</h4></Link>
-    //   {/* <Link to="/dentist/:id"><h4>Dentistas</h4></Link> */}
-    //   <Link to="/contact"><h4 class="h4-link">Contacto</h4></Link>
-    //   <Link to="/favs"><h4 class="h4-link">Favoritos</h4></Link>
-    //   {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-    //   <button>Change theme {state.them ? 'Light' : 'Dark'}</button>
-    // </nav>
   )
 }
 
