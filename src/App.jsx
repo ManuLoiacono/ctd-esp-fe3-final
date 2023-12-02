@@ -8,7 +8,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from './Routes/Home'
 //import Detail from './Routes/Detail'
 import Contact from './Routes/Contact'
-import Favs from './Routes/Favs'
+import Favs from './Routes/Favs' 
 
 
 function App() {

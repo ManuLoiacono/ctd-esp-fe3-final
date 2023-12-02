@@ -34,7 +34,8 @@ const Card = ({ character }) => {
       <Link to={"/dentist/" + character.id}>
         <h3>{character.name}</h3>
       </Link> 
-      <p>{character.username} - {character.id}</p>
+      <h4>{character.username}</h4>
+      <p>{character.id}</p>
       
       <button onClick={addFav}>{findFav ? '🌟':'⭐'}</button>
     </div>
