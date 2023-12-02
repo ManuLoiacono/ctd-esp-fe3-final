@@ -14,9 +14,11 @@ const Detail = () => {
   const url = 'https://jsonplaceholder.typicode.com/users/' + id;
 
   useEffect(() => {
-    axios(url)
-    .then(res => setChar(res.data))  
-
+    const fetchChar = async () => {
+      const res = await axios(url)
+      setChar(res.data)
+    }
+    fetchChar() 
   }, [])
 
   return (

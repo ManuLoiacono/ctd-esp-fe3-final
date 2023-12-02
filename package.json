@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "msw": "^0.47.3",
+    "msw": "^2.0.9",
     "source-map-loader": "^4.0.1"
   }
 }

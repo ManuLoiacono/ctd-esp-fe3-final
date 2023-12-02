@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const initialState = {
   list: [],
-  favs: [],
+  favs: JSON.parse(localStorage.getItem('favs')) || [],
   theme: true
 }
 export const ContextGlobal = createContext(undefined);
@@ -13,10 +13,7 @@ export const ContextGlobal = createContext(undefined);
 export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
 
-  const valor = true;
-
   const [state, dispatch] = useReducer(reducer, initialState);
-  // const {list, favs, theme} =
 
   const url = 'https://jsonplaceholder.typicode.com/users';
 
@@ -25,6 +22,9 @@ export const ContextProvider = ({ children }) => {
     .then(res => dispatch({type: 'GET_DENTIST', payload: res.data}))
   })
 
+  useEffect(() => {
+    localStorage.setItem('favs', JSON.stringify(state.favs))
+  }, [state.favs])
 
   return (
     <ContextGlobal.Provider value={{state, dispatch}}>

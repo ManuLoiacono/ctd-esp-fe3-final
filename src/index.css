@@ -120,3 +120,21 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+.App {
+  background-color: white;
+
+}
+
+nav {
+  background-color: blue;
+  display: flex  ;
+  justify-content: space-between;
+
+}
+
+.h4-link {
+
+  color: white;
+}
+

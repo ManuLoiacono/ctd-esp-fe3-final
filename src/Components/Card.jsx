@@ -5,12 +5,23 @@ import { useCharContext } from "./utils/global.context";
 // const Card = ({ name, username, id }) => {
 const Card = ({ character }) => {
   
-  const {dispatch} = useCharContext()
+  const {state, dispatch} = useCharContext()
+  const findFav = state.favs.find(fav => fav.id == character.id)
+  
+  //const findFav = true
 
   const addFav = () => {
     // Aqui iria la logica para agregar la Card en el localStorage
-    dispatch({type: 'ADD_FAVS', payload: character})
+    
+    console.log(findFav);
 
+    if(findFav){
+      alert('Ya agregado')
+    } else {
+      dispatch({type: 'ADD_FAVS', payload: character})
+    }
+
+    // dispatch({type: 'ADD_FAVS', payload: character})
   }
 
   return (
@@ -25,8 +36,7 @@ const Card = ({ character }) => {
       </Link> 
       <p>{character.username} - {character.id}</p>
       
-      <button onClick={addFav} className="favButton">Add fav</button>
-
+      <button onClick={addFav}>{findFav ? '🌟':'⭐'}</button>
     </div>
   );
 };
