@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <div id="nav">
       <nav>
-        <div class="ul-Button">
+        <div className="ul-Button">
           <ul>
             <li>
               <Link to="/home" >Home</Link>
