@@ -20,8 +20,8 @@ const Navbar = () => {
     dispatch({type: 'CHANGE_THEME', payload: Theme2})
 
   }
-
-  useEffect(() => {
+  
+    useEffect(() => {
     const back = document.getElementById('App');
     const title = document.getElementById('h1');
     const nav = document.getElementById('nav');
@@ -35,17 +35,6 @@ const Navbar = () => {
     footer.style.backgroundColor = theme === 'dark'? '#34495e' : '#3498db'
   }, [theme]);
     
-    // const back = document.getElementById('App');
-    // const title = document.getElementById('h1');
-    // const nav = document.getElementById('nav');
-    // const themeButton = document.getElementById('buttonTheme');
-    // const footer = document.getElementById('footer');
-    
-    // back.style.backgroundColor = theme === 'dark' ? '#2c3e50' : 'white';
-    // title.style.color = theme === 'dark' ? 'white' : 'black';
-    // nav.style.backgroundColor = theme === 'dark'? '#34495e' : '#3498db'
-    // themeButton.style.backgroundColor = theme === 'dark'? '#3498db' : '#34495e'
-    // footer.style.backgroundColor = theme === 'dark'? '#34495e' : '#3498db'
 
 
   

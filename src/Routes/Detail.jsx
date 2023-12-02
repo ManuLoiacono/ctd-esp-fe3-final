@@ -18,7 +18,6 @@ const Detail = () => {
       const res = await axios(url)
       setChar(res.data)
       console.log(res.data)
-
     }
     fetchChar() 
   }, [])
@@ -33,7 +32,7 @@ const Detail = () => {
         <h3 id="h1">{char.name}</h3>
         <p id="h1">{char.email}</p>
         <p id="h1">{char.phone}</p>
-        <p id="h1 ">{char.website}</p>
+        <p id="h1">{char.website}</p>
       
     </div>
     
